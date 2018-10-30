@@ -86,6 +86,10 @@ namespace SimpleConsole
                 // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
                 NumberWithUnitRecognizer.RecognizeTemperature(query, culture),
 
+                // Temperature recognizer will find any temperature presented
+                // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
+                NumberWithUnitRecognizer.RecognizePackaging(query, culture),
+
                 // Datetime recognizer This model will find any Date even if its write in coloquial language 
                 // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
                 DateTimeRecognizer.RecognizeDateTime(query, culture),

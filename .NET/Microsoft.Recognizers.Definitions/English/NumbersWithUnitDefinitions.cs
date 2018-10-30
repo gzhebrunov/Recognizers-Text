@@ -793,5 +793,13 @@ namespace Microsoft.Recognizers.Definitions.English
 			"stone",
 			"dram"
 		};
+		public static readonly Dictionary<string, string> PackSuffixList = new Dictionary<string, string>
+		{
+			{ "Piece", "-pcs|pcs|pieces|x" }
+		};
+		public static readonly Dictionary<string, string> PackPrefixList = new Dictionary<string, string>
+		{
+			{ "Piece", "Lot of|x|qty" }
+		};
 	}
 }

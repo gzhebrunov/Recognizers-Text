@@ -40,6 +40,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return GetModel<DimensionModel>(culture, fallbackToDefaultCulture);
         }
 
+        public PackagingModel GetPackagingModel(string culture = null, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<PackagingModel>(culture, fallbackToDefaultCulture);
+        }
+
         public AgeModel GetAgeModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
             return GetModel<AgeModel>(culture, fallbackToDefaultCulture);
@@ -58,6 +63,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public static List<ModelResult> RecognizeDimension(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool fallbackToDefaultCulture = true)
         {
             return RecognizeByModel(recognizer => recognizer.GetDimensionModel(culture, fallbackToDefaultCulture), query, options);
+        }
+
+        public static List<ModelResult> RecognizePackaging(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool fallbackToDefaultCulture = true)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetPackagingModel(culture, fallbackToDefaultCulture), query, options);
         }
 
         public static List<ModelResult> RecognizeAge(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool fallbackToDefaultCulture = true)
@@ -103,6 +113,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
                         new NumberWithUnitParser(new English.DimensionParserConfiguration())
+                    }
+                }));
+
+            RegisterModel<PackagingModel>(
+                Culture.English,
+                (options) => new PackagingModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new English.PackExtractorConfiguration()),
+                        new BaseMergedUnitParser(new English.PackParserConfiguration())
                     }
                 }));
 

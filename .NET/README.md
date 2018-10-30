@@ -1,4 +1,4 @@
-# Microsoft.Recognizers.Text for .NET 
+# Microsoft.Recognizers.Text for .NET
 
 ## Getting Started
 

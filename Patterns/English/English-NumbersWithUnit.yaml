@@ -887,4 +887,14 @@ AmbiguousWeightUnitList: !list
     - oz
     - stone
     - dram
+#PackExtractorConfiguration
+PackSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Piece: -pcs|pcs|pieces|x
+PackPrefixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Piece: Lot of|x|qty
+
 ...

@@ -16,6 +16,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public const string SYS_UNIT_TEMPERATURE = "builtin.unit.temperature";
         public const string SYS_UNIT_VOLUME = "builtin.unit.volume";
         public const string SYS_UNIT_WEIGHT = "builtin.unit.weight";
+        public const string SYS_UNIT_PACKAGING = "builtin.unit.packaging";
         public const string SYS_NUM = "builtin.num";
         
         // For cases like '2:00 pm', both 'pm' and '00 pm' are not dimension 
